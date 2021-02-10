@@ -10,9 +10,25 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 93.75%; /* 14px */
+}
+
 body {
     background: #f0f2f5;
     font-family:'Poppins', sans-serif;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 .container {
@@ -30,6 +46,21 @@ h2 {
     font-weight: normal;
 }
 
+/* Links & Buttons =============================== */
+
+a {
+    color: #49AA26;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3dd705;
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
 
 /* Header =============================== */
 
@@ -55,13 +86,20 @@ header #logo {
     margin-top: 0;
 }
 
+/* Transaction =============================== */
+
+#transaction {
+    display: block;
+    overflow-x: auto;
+}
+
 /* Card =============================== */
 
 .card {
     background: #ffffff;
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
-
+    
     margin-bottom: 2rem;
     color: var(--dark-blue);
 
@@ -70,6 +108,10 @@ header #logo {
 .card h3 {
     font-weight: normal;
     font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
 }
 
@@ -88,12 +130,17 @@ header #logo {
 #data-table{
     width: 100%;
     border-spacing: 0 0.5rem;
-    color: #969cb3;
+    color: #969cb3; 
 }
 
 table thead tr th:first-child,
 table tbody tr td:first-child {
     border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
 }
 
 table th {
@@ -137,4 +184,20 @@ footer {
     padding: 4rem 0 2rem;
     color: var(--dark-blue);
     opacity: 0.6;
+}
+
+/* Responsive =============================== */
+
+@media (min-width: 800px) {
+    html{
+        font-size: 87.5%;
+    }
+
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+
 }
